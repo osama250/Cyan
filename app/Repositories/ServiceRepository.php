@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 class ServiceRepository extends BaseRepository
 {
     protected $fieldSearchable = [
-        
+        'image'
     ];
 
     public function getFieldsSearchable(): array

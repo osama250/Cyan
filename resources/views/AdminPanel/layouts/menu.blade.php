@@ -196,6 +196,38 @@
                                         <!--end:Menu link-->
                                     </div>
                                     @endif
+                                    @if (auth()->user()->can('View Cancellation_Policy'))
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link active" href="{{ route('cancellation_-policies.index') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('lang.cancel') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                    @endif
+                                    <div class="menu-item">
+                                        <!--begin:Menu link-->
+                                        <a class="menu-link active" href="{{ route('chooseuses.index') }}">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">{{ __('lang.choose') }}</span>
+                                        </a>
+                                        <!--end:Menu link-->
+                                    </div>
+                                    <div class="menu-item">
+                                        <!--begin:Menu link-->
+                                        <a class="menu-link active" href="{{ route('services.index') }}">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">{{ __('lang.services') }}</span>
+                                        </a>
+                                        <!--end:Menu link-->
+                                    </div>
                                 </div>
                                 <!--end:Menu sub-->
                             </div>

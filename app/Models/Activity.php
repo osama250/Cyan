@@ -9,15 +9,12 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 class Activity extends Model
 {
     use Translatable;
-    public $table = 'activities';
-
-    public $fillable = [
-        'facility_id'
-    ];
+    public $table    = 'activities';
+    public $fillable = [ 'facility_id' ];
 
     protected $casts = [
-        'id' => 'integer',
-        'facility_id' => 'integer'
+        'id'             => 'integer',
+        'facility_id'    => 'integer'
     ];
 
     protected $translatedAttributes = ['title'];

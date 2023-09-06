@@ -133,4 +133,8 @@ return [
     'helpful_fact' => 'Fato útil',
     'key' => 'Chave',
     'feature_photos' => 'Fotos de destaque',
+    'cancel'     =>  'Cancellation-Policy' ,
+    'content'    => 'Content' ,
+    'choose'     => 'Choose' ,
+
 ];

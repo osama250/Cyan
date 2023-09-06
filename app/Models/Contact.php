@@ -6,21 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-    public $table = 'contacts';
-
-    public $fillable = [
-        'icon',
-        'value'
-    ];
+    public $table    = 'contacts';
+    public $fillable = [ 'icon', 'value' ];
 
     protected $casts = [
-        'id' => 'integer',
-        'icon' => 'string',
-        'value' => 'string'
+        'id'     => 'integer',
+        'icon'   => 'string',
+        'value'  => 'string'
     ];
 
     public static array $rules = [
-        'icon' => 'required|string',
+        'icon'  => 'required|string',
         'value' => 'required|string'
     ];
 

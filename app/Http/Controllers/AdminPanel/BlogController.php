@@ -25,7 +25,7 @@ class BlogController extends AppBaseController
         $this->middleware('permission:Delete Blog', ['only' => ['destroy']]);
     }
 
-    
+
     public function index(Request $request)
     {
         $blogs = $this->blogRepository->all();
@@ -39,7 +39,7 @@ class BlogController extends AppBaseController
         return view('AdminPanel.blogs.create');
     }
 
-    
+
     public function store(CreateBlogRequest $request)
     {
         $input = $request->all();
@@ -50,7 +50,7 @@ class BlogController extends AppBaseController
         return redirect(route('blogs.index'))->with('success',__('lang.created'));
     }
 
-    
+
     // public function show($id)
     // {
     //     $blog = $this->blogRepository->find($id);
@@ -64,17 +64,14 @@ class BlogController extends AppBaseController
     //     return view('blogs.show')->with('blog', $blog);
     // }
 
-    
+
     public function edit($id)
     {
         $blog = Blog::findOrFail($id);
-
-        
-
         return view('AdminPanel.blogs.edit',get_defined_vars());
     }
 
-    
+
     public function update($id, UpdateBlogRequest $request)
     {
         $blog = Blog::findOrFail($id);
@@ -86,15 +83,11 @@ class BlogController extends AppBaseController
         return redirect(route('blogs.index'))->with('success',__('lang.updated'));
     }
 
-   
+
     public function destroy($id)
     {
         $blog = Blog::findOrFail($id);
-
-    
         $this->blogRepository->delete($id);
-
-
         return redirect(route('blogs.index'))->with('error',__('lang.deleted'));
     }
 }

@@ -11,21 +11,17 @@ class Blog extends Model
 {
     use Translatable ,FileUploadTrait;
     public $table = 'blogs';
-
     public $translatedAttributes =  ['title','brief' ,'description', 'seo', 'keywords', 'focus_keyword'];
-
-    public $fillable = [
-        'photo', 'title', 'brief', 'description', 'seo', 'keywords', 'focus_keyword',
-    ];
+    public $fillable     = [ 'photo', 'title', 'brief', 'description', 'seo', 'keywords', 'focus_keyword' ];
 
     protected $casts = [
-        'id' => 'integer',
+        'id'    => 'integer',
         'photo' => 'string',
         'title' => 'string',
         'brief' => 'string',
         'description' => 'string',
-        'seo' => 'string',
-        'keywords' => 'string',
+        'seo'         => 'string',
+        'keywords'    => 'string',
         'focus_keyword' => 'string',
     ];
 
@@ -43,10 +39,10 @@ class Blog extends Model
         return $rules;
     }
 
-    public function getPhotoAttribute(){
+    public function getPhotoAttribute()
+    {
         return asset('uploads/blogs/'.$this->attributes['photo']);
     }
-
     public function setPhotoAttribute($file)
     {
         $name = $this->upload($file,'uploads/blogs/');

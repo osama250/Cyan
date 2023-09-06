@@ -26,7 +26,7 @@ class UpdateBlogRequest extends FormRequest
     {
         $rules = Blog::rules();
         $rules['photo'] = 'nullable|image|mimes:png,jpg,jpeg';
-        
+
         return $rules;
     }
 }

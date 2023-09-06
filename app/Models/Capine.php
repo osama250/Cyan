@@ -13,16 +13,16 @@ class Capine extends Model
 
     public $fillable = [
         'type',
-    ];
+];
 
     protected $casts = [
-        'id' => 'integer',
-        'type' => 'string'
+        'id'    => 'integer',
+        'type'  => 'string'
     ];
 
     protected $translatedAttributes = ['type'];
 
-    public static function rules(){
+    public static function rules() {
         $langs = LaravelLocalization::getSupportedLanguagesKeys();
         foreach ($langs as $lang) {
             $rules[$lang . '.type'] = 'required|string|min:2';

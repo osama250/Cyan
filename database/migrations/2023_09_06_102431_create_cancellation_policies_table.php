@@ -6,26 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('cancellation_policies', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('image');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::drop('services');
+        Schema::drop('cancellation_policies');
     }
 };

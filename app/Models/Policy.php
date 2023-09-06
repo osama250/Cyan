@@ -12,7 +12,7 @@ class Policy extends Model
     public $table = 'policies';
 
     public $translatedAttributes =  ['title', 'description', 'seo', 'keywords', 'focus_keyword'];
-    protected $fillable = ['title', 'description', 'seo', 'keywords', 'focus_keyword'];
+    protected $fillable          = ['title', 'description', 'seo', 'keywords', 'focus_keyword'];
 
 
     public static function rules()

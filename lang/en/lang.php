@@ -134,4 +134,7 @@ return [
     'helpful_fact' => 'Helpfull Fact',
     'key' => 'Key',
     'feature_photos' => 'Feature Photos',
+    'cancel'     =>  'Cancellation-Policy' ,
+    'content'    => 'Content' ,
+    'choose'     => 'Choose-Us' ,
 ];

@@ -11,15 +11,15 @@ class AboutUs extends Model
 {
     use HasFactory, Translatable;
     public $translatedAttributes =  ['title', 'description','seo','keywords','focus_keyword'];
-    protected $fillable = ['title','description', 'seo', 'keywords', 'focus_keyword'];
+    protected $fillable          =  ['title','description', 'seo', 'keywords', 'focus_keyword'];
 
     public static function rules(){
         $langs = LaravelLocalization::getSupportedLanguagesKeys();
         foreach($langs as $lang){
-            $rules[$lang . '.title'] = 'required|string|min:5';
-            $rules[$lang . '.description'] = 'required|string|min:5';
-            $rules[$lang . '.seo'] = 'required|string|min:5';
-            $rules[$lang . '.keywords'] = 'required|string|min:5';
+            $rules[$lang . '.title']         = 'required|string|min:5';
+            $rules[$lang . '.description']   = 'required|string|min:5';
+            $rules[$lang . '.seo']           = 'required|string|min:5';
+            $rules[$lang . '.keywords']      = 'required|string|min:5';
             $rules[$lang . '.focus_keyword'] = 'required|string|min:5';
         }
         return $rules;

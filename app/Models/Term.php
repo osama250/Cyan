@@ -11,7 +11,7 @@ class Term extends Model
     use Translatable;
     public $table = 'terms';
     public $translatedAttributes =  ['title', 'description', 'seo', 'keywords', 'focus_keyword'];
-    protected $fillable = ['title', 'description', 'seo', 'keywords', 'focus_keyword'];
+    protected $fillable          = ['title', 'description', 'seo', 'keywords', 'focus_keyword'];
 
 
     public static function rules()

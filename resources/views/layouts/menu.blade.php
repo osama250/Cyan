@@ -173,3 +173,17 @@
         <p>Helpful Facts</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('cancellationPolicies.index') }}" class="nav-link {{ Request::is('cancellationPolicies*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Cancellation  Policies</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('chooseuses.index') }}" class="nav-link {{ Request::is('chooseuses*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Chooseuses</p>
+    </a>
+</li>

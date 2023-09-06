@@ -14,14 +14,10 @@ class Facilite extends Model
     public $translatedAttributes =  ['title'];
     public $table = 'facilites';
 
-    public $fillable = [
-        'title',
-        'icon',
-        'facility_type_id'
-    ];
+    public $fillable = [ 'title', 'icon', 'facility_type_id' ];
 
     protected $casts = [
-        'id' => 'integer',
+        'id'   => 'integer',
         'icon' => 'string'
     ];
 

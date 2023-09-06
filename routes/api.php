@@ -20,6 +20,10 @@ use App\Http\Controllers\API\SocialController;
 use App\Http\Controllers\API\SubscriberController;
 use App\Http\Controllers\API\TermController;
 use App\Http\Controllers\API\TripController;
+use App\Http\Controllers\API\cancellationPolicyController;
+use App\Http\Controllers\API\chooseUsController;
+use App\Http\Controllers\API\servicesController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +67,14 @@ Route::get('terms', [TermController::class, 'terms']);
 Route::get('policies', [PolicyController::class, 'policies']);
 Route::get('blogs', [BlogController::class, 'blogs']);
 Route::get('blog/{id}', [BlogController::class, 'blog']);
+Route::get('cancle', [ cancellationPolicyController::class, 'cancel']);
+Route::get('choose', [ chooseUsController::class, 'choose']);
+Route::get('services', [ servicesController::class, 'services']);
+
+
+
+
+
 Route::middleware(['auth:user','StatusMiddleware'])->group(function(){
     Route::get('profile', [AuthController::class, 'Profile']);
     Route::post('update-profile', [AuthController::class, 'UpdateProfile']);

@@ -28,11 +28,13 @@ use App\Http\Controllers\AdminPanel\NewsletterController;
 use App\Http\Controllers\AdminPanel\OfferController;
 use App\Http\Controllers\AdminPanel\PolicyController;
 use App\Http\Controllers\AdminPanel\PropertyController;
-use App\Http\Controllers\AdminPanel\ServiceController;
 use App\Http\Controllers\AdminPanel\TermController;
 use App\Http\Controllers\AdminPanel\TripController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\AdminPanel\Cancellation_PolicyController;
+use App\Http\Controllers\AdminPanel\ChooseUsController;
+use App\Http\Controllers\AdminPanel\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +99,9 @@ Route::group(
             Route:: resource('policies', PolicyController::class);
             Route::resource('contacts', ContactController::class);
             Route::resource('blogs', BlogController::class);
+            Route::resource('cancellation_-policies', Cancellation_PolicyController::class);
+            Route::resource('chooseuses', ChooseUsController::class);
+            Route::resource('services',ServiceController::class);
         });
     }
 );
@@ -115,3 +120,4 @@ Route::post(
     'generator_builder/generate-from-file',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');
+
