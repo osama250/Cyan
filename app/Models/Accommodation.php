@@ -7,46 +7,36 @@ use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class Excursion extends Model
+class Accommodation extends Model
 {
-    use Translatable ,FileUploadTrait;
-    public $table = 'excursions';
-
-    public $fillable = [
-        'title',
-        'description',
-        'location',
-        'image'
-    ];
+    use Translatable , FileUploadTrait;
+    public $table                 = 'accommodations';
+    public $translatedAttributes  =  [ 'title', 'text' ];
+    public $fillable              = [ 'image' , 'title' , 'text' ];
 
     protected $casts = [
-        'id' => 'integer',
-        'title' => 'string',
-        'location' => 'string',
+        'id'    => 'integer',
         'image' => 'string'
     ];
 
-    public $translatedAttributes = ['title','description'];
-
-    public static function rules(){
+    public static function rules()
+    {
         $langs = LaravelLocalization::getSupportedLanguagesKeys();
         foreach ($langs as $lang) {
             $rules[$lang . '.title'] = 'required|string|min:5';
-            $rules[$lang . '.description'] = 'required|string|min:5';
+            $rules[$lang . '.text']  = 'required|string|min:5';
         }
-        $rules['location'] = 'required|url';
         $rules['image'] = 'required|image|mimes:jpg,jpeg,png';
         return $rules;
     }
 
-    public function setImageAttribute($file){
+    public function setImageAttribute($file) {
         $name = $this->upload($file,'uploads/excursion/');
         $this->attributes['image'] = $name;
     }
 
-    public function getImageAttribute(){
+    public function getImageAttribute() {
         return asset('uploads/excursion/'.$this->attributes['image']);
     }
-
 
 }

@@ -13,7 +13,7 @@ class Service extends Model
     use Translatable , FileUploadTrait;
     public $table    = 'services';
     public $translatedAttributes  =  [ 'title', 'text' ];
-    public $fillable              = ['image' , 'title' , 'text' ];
+    public $fillable              =  [ 'image' , 'title' , 'text' ];
 
     protected $casts = [
         'id'     => 'integer',

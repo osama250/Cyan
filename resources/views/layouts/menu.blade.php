@@ -187,3 +187,17 @@
         <p>Chooseuses</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('dinings.index') }}" class="nav-link {{ Request::is('dinings*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Dinings</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('accommodations.index') }}" class="nav-link {{ Request::is('accommodations*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Accommodations</p>
+    </a>
+</li>

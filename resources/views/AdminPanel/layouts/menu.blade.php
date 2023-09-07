@@ -228,6 +228,30 @@
                                         </a>
                                         <!--end:Menu link-->
                                     </div>
+                                    @if (auth()->user()->can('View Dining'))
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link active" href="{{ route('dinings.index') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('lang.dining') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                    @endif
+                                    @if (auth()->user()->can('View Accommodation'))
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link active" href="{{ route('accommodations.index') }}">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">{{ __('lang.accommodation') }}</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                    @endif
                                 </div>
                                 <!--end:Menu sub-->
                             </div>

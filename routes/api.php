@@ -23,6 +23,8 @@ use App\Http\Controllers\API\TripController;
 use App\Http\Controllers\API\cancellationPolicyController;
 use App\Http\Controllers\API\chooseUsController;
 use App\Http\Controllers\API\servicesController;
+use App\Http\Controllers\API\DiningController;
+use App\Http\Controllers\API\AccommodationController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -69,9 +71,10 @@ Route::get('blogs', [BlogController::class, 'blogs']);
 Route::get('blog/{id}', [BlogController::class, 'blog']);
 Route::get('cancle', [ cancellationPolicyController::class, 'cancel']);
 Route::get('choose', [ chooseUsController::class, 'choose']);
-Route::get('services', [ servicesController::class, 'services']);
-
-
+Route::get('services', [ servicesController::class, 'services'] );
+Route::get('dinings', [ DiningController::class, 'dining' ] );
+Route::get('accommodations', [ AccommodationController::class , 'accommodation'] );
+Route::get('excursions/img', [ ExcursionController::class , 'excursionsImg' ] );
 
 
 

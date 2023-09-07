@@ -35,6 +35,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\AdminPanel\Cancellation_PolicyController;
 use App\Http\Controllers\AdminPanel\ChooseUsController;
 use App\Http\Controllers\AdminPanel\ServiceController;
+use App\Http\Controllers\AdminPanel\DiningController;
+use App\Http\Controllers\AdminPanel\AccommodationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +104,8 @@ Route::group(
             Route::resource('cancellation_-policies', Cancellation_PolicyController::class);
             Route::resource('chooseuses', ChooseUsController::class);
             Route::resource('services',ServiceController::class);
+            Route::resource('dinings', DiningController::class);
+            Route::resource('accommodations', AccommodationController::class);
         });
     }
 );

@@ -137,4 +137,6 @@ return [
     'cancel'     =>  'Cancellation-Policy' ,
     'content'    => 'Content' ,
     'choose'     => 'Choose-Us' ,
+    'dining'     => 'Dining' ,
+    'accommodation'  => 'Accommodations',
 ];
