@@ -12,7 +12,7 @@ class Blog extends Model
     use Translatable ,FileUploadTrait;
     public $table = 'blogs';
     public $translatedAttributes =  ['title','brief' ,'description', 'seo', 'keywords', 'focus_keyword'];
-    public $fillable     = [ 'photo', 'title', 'brief', 'description', 'seo', 'keywords', 'focus_keyword' ];
+    public $fillable  = [ 'photo', 'title', 'brief', 'description', 'seo', 'keywords', 'focus_keyword' ];
 
     protected $casts = [
         'id'    => 'integer',

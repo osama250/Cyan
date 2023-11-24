@@ -12,7 +12,7 @@ class Coupon extends Model
 
     protected $fillable = ['name','limit','remaining','start_date','end_date','status', 'type','value'];
 
-    protected $casts = ['start_date','end_date'];
+    protected $casts   = ['start_date','end_date'];
 
 
     public $appends = ['statustype','typestring'];

@@ -10,8 +10,8 @@ class TripPhoto extends Model
     use HasFactory;
     public $fillable = ['photo','trip_id'];
 
-    
-    public function getPhotoAttribute(){
+
+    public function getPhotoAttribute() {
         return asset('uploads/trips/' . $this->attributes['photo']);
     }
 }

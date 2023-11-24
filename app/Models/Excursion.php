@@ -10,20 +10,15 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 class Excursion extends Model
 {
     use Translatable ,FileUploadTrait;
-    public $table = 'excursions';
 
-    public $fillable = [
-        'title',
-        'description',
-        'location',
-        'image'
-    ];
+    public $table    = 'excursions';
+    public $fillable = [ 'title', 'description', 'location',  'image' ];
 
     protected $casts = [
-        'id' => 'integer',
-        'title' => 'string',
-        'location' => 'string',
-        'image' => 'string'
+        'id'        => 'integer',
+        'title'     => 'string',
+        'location'  => 'string',
+        'image'     => 'string'
     ];
 
     public $translatedAttributes = ['title','description'];

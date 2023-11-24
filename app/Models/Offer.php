@@ -45,11 +45,11 @@ class Offer extends Model
         return Carbon::parse($this->attributes['end_date'])->toDateString();
     }
 
-    public function getTypestringAttribute(){
+    public function getTypestringAttribute() {
         return $this->attributes['type'] == 1 ? 'amount' : 'percentage';
     }
 
-    public function trip(){
+    public function trip() {
         return $this->belongsTo(Trip::class,'trip_id');
     }
 

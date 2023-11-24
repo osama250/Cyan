@@ -151,7 +151,6 @@
                                 aria-hidden="true" data-kt-initialized="1">
                                 <option value="1" data-select2-id="select2-data-74-kng8" {{isset($coupon) && $coupon->status ==1? 'selected':''}} >{{__('lang.active')}}</option>
                                 <option value="2" data-select2-id="select2-data-131-9yfh" {{isset($coupon) && $coupon->status ==2? 'selected':''}} >{{__('lang.inactive')}}</option>
-
                             </select>
                             <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>

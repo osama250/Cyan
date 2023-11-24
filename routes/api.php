@@ -25,6 +25,7 @@ use App\Http\Controllers\API\chooseUsController;
 use App\Http\Controllers\API\servicesController;
 use App\Http\Controllers\API\DiningController;
 use App\Http\Controllers\API\AccommodationController;
+use App\Http\Controllers\API\CheckoutController;;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +76,9 @@ Route::get('services', [ servicesController::class, 'services'] );
 Route::get('dinings', [ DiningController::class, 'dining' ] );
 Route::get('accommodations', [ AccommodationController::class , 'accommodation'] );
 Route::get('excursions/img', [ ExcursionController::class , 'excursionsImg' ] );
+
+Route::post('checkout',[ CheckoutController::class, 'checkout']);
+
 
 
 

@@ -13,17 +13,10 @@ class SideSeeing extends Model
     public $table = 'side_seeings';
 
     public $translatedAttributes =  ['title', 'short_description','long_description'];
-
-    public $fillable = [
-        'main_photo',
-        'title',
-        'short_description',
-        'long_description',
-        'price'
-    ];
+    public $fillable = [ 'main_photo', 'title','short_description', 'long_description', 'price' ];
 
     protected $casts = [
-        'id' => 'integer',
+        'id'        => 'integer',
         'main_photo' => 'string'
     ];
 

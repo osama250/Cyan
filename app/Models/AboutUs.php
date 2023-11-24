@@ -13,7 +13,7 @@ class AboutUs extends Model
     public $translatedAttributes =  ['title', 'description','seo','keywords','focus_keyword'];
     protected $fillable          =  ['title','description', 'seo', 'keywords', 'focus_keyword'];
 
-    public static function rules(){
+    public static function rules() {
         $langs = LaravelLocalization::getSupportedLanguagesKeys();
         foreach($langs as $lang){
             $rules[$lang . '.title']         = 'required|string|min:5';

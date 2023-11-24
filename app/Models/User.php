@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use App\Models\Reservation;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -68,5 +69,10 @@ class User extends Authenticatable implements JWTSubject
 
     public function getStatustypeAttribute(){
         return $this->attributes['status'] == 1? __('lang.active') : __('lang.inactive');
+    }
+
+    public function reservation()
+    {
+        return $this->hasOne( Reservation::class );
     }
 }

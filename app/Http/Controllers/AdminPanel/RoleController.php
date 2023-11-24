@@ -20,18 +20,15 @@ class RoleController extends Controller
     }
     public function index()
     {
-
         $roles = Role::all();
         return view('AdminPanel.roles.index', get_defined_vars());
     }
-
 
     public function create()
     {
         $permessions = Permission::all();
         return view('AdminPanel.roles.create', get_defined_vars());
     }
-
 
     public function store(RoleRequest $request)
     {
@@ -66,7 +63,6 @@ class RoleController extends Controller
 
         return redirect('/role')->with('success', __('lang.updated'));
     }
-
 
     public function destroy($id)
     {

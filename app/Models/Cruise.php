@@ -11,7 +11,6 @@ class Cruise extends Model
 {
     use Translatable , FileUploadTrait;
     public $table = 'cruises';
-
     public $fillable = [
         'name',
         'main_photo',
@@ -24,11 +23,11 @@ class Cruise extends Model
     ];
 
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'main_photo' => 'string',
-        'location' => 'string',
-        'media_link' => 'string'
+        'id'            => 'integer',
+        'name'          => 'string',
+        'main_photo'    => 'string',
+        'location'      => 'string',
+        'media_link'    => 'string'
     ];
 
     public $translatedAttributes = ['info','dinning','features'];
@@ -71,7 +70,7 @@ class Cruise extends Model
         $this->attributes['main_photo'] = $name;
     }
 
-    public function photos(){
+    public function photos() {
         return $this->hasMany(CruisePhoto::class,'cruise_id');
     }
 
@@ -80,21 +79,21 @@ class Cruise extends Model
         return $this->hasMany(FeaturePhoto::class, 'cruise_id');
     }
 
-    public function facilites(){
+    public function facilites() {   // many to many
         return $this->belongsToMany(Facilite::class,'cruise_facilites','cruise_id','facilite_id');
     }
 
-    public function capines()
+    public function capines()  // Many to Many
     {
-        return $this->belongsToMany(Capine::class,'cruise_capines', 'cruise_id', 'capine_id')->withPivot('number','id','capacity');
+        return $this->belongsToMany( Capine::class,'cruise_capines', 'cruise_id', 'capine_id')->withPivot('number','id','capacity');
     }
 
-    public function trips()
+    public function trips()   // one to Many
     {
         return $this->hasMany(Trip::class, 'cruise_id');
     }
 
-    public function iteneraries(){
+    public function iteneraries(){    // one to many
         return $this->hasMany(CruiseItenerarie::class,'cruise_id');
     }
 

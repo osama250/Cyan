@@ -30,7 +30,6 @@ class Trip extends Model
         'tag_color',
     ];
 
-
     public $translatedAttributes = ['name','description'];
 
     protected $casts = [
@@ -61,7 +60,7 @@ class Trip extends Model
         $rules['location'] = 'required|url';
         $rules['video'] = 'required|url';
         $rules['price'] = 'required|numeric|not_in:0|min:1';
-        $rules['arrive_date'] = 'required|date|after:sailling_date';
+        $rules['arrive_date'] = 'required|date|after:sailling_date';    // important
         $rules['photos'] = 'required|array';
         $rules['photos.*'] = 'required|string';
         $rules['cruise_id'] = 'required';
@@ -95,8 +94,8 @@ class Trip extends Model
         return $this->hasMany(TripPhoto::class, 'trip_id');
     }
 
-    public function cruise(){
-        return $this->belongsTo(Cruise::class,'cruise_id');
+    public function cruise() {
+        return $this->belongsTo( Cruise::class,'cruise_id' );
     }
 
 }

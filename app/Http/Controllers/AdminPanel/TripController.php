@@ -51,8 +51,8 @@ class TripController extends AppBaseController
 
         $trip = $this->tripRepository->create($input);
 
-        foreach ($request->photos as $photo) {
-            $trip->photos()->create([
+        foreach ( $request->photos as $photo ) {
+            $trip->photos()->create( [
                 'photo' => $photo,
             ]);
         }

@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 
 class ExcursionController extends Controller
 {
-    public function excursions(){
+    public function excursions() {
         return response()->json( ['excursions'=>Excursion::all() ] ,200 );
     }
 
-    public function excursionsImg(){
+    public function excursionsImg() {
         return response()->json( ['excursions' => Excursion::select('image')->get() ] , 200 );
     }
 }

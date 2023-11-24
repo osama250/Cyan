@@ -9,18 +9,14 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 class Capine extends Model
 {
     use Translatable;
-    public $table = 'capines';
-
-    public $fillable = [
-        'type',
-];
+    public $table                   = 'capines';
+    protected $translatedAttributes = ['type'];
+    public $fillable                = ['type'];
 
     protected $casts = [
         'id'    => 'integer',
         'type'  => 'string'
     ];
-
-    protected $translatedAttributes = ['type'];
 
     public static function rules() {
         $langs = LaravelLocalization::getSupportedLanguagesKeys();
